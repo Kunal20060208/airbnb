@@ -148,18 +148,9 @@ export default function Navbar({
 
           <div
 
-            className="
-            fixed
-            inset-0
-            bg-black/25
-            z-40
-            "
+            className="fixed inset-0 bg-transparent z-40"
 
-            onClick={() =>
-
-              setMenuOpen(false)
-
-            }
+            onClick={() => setMenuOpen(false)}
 
           />
 
@@ -178,6 +169,8 @@ export default function Navbar({
           ${displayState}
 
           ${popupOpen ? "popup-open" : ""}
+
+          ${menuOpen ? "menu-open" : ""}
 
         `}
 

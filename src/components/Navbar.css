@@ -6,7 +6,7 @@
 
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
 
 background:
 rgba(255,255,255,.92);
@@ -33,6 +33,14 @@ overflow:hidden;
 .navbar.popup-open{
 
 overflow:visible;
+
+}
+
+.navbar.menu-open{
+
+   overflow:visible;
+
+   z-index:1500;
 
 }
 
@@ -370,7 +378,7 @@ box-shadow:
 
 animation:navbarMenu .18s ease;
 
-z-index:999;
+z-index:2000;
 
 }
 

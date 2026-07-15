@@ -8,6 +8,8 @@ import {
   Link
 } from "react-router-dom";
 
+import hostIllustration from "../assets/hero.png";
+
 export default function NavbarRightMenu({
 
   menuOpen,
@@ -218,13 +220,9 @@ export default function NavbarRightMenu({
                 </div>
 
                 <img
-
-                  src="https://a0.muscache.com/im/pictures/hosting/Hosting-Menu-Illustration.png"
-
+                  src={hostIllustration}
                   alt="host"
-
                   className="w-16"
-
                 />
 
               </Link>
