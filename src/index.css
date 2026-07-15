@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* ======================================================
+   GLOBAL RESET
+====================================================== */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:"Inter", Arial, sans-serif;
+    color:#222;
+    background:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* ======================================================
+   IMAGES
+====================================================== */
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+    max-width:100%;
+    display:block;
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+
+button{
+    cursor:pointer;
+    font-family:inherit;
+}
+
+/* ======================================================
+   SCROLLBAR UTILITIES
+====================================================== */
+
+.no-scrollbar{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+.no-scrollbar::-webkit-scrollbar{
+    display:none;
+}
+
+.scrollbar-hide{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+    display:none;
+}
+
+/* Hide all browser scrollbars (optional) */
+
+::-webkit-scrollbar{
+    display:none;
+}

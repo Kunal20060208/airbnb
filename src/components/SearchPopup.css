@@ -1,0 +1,1525 @@
+/* ==========================================================
+   SEARCH POPUP
+========================================================== */
+
+/* ==========================================================
+   POPUP CARD
+========================================================== */
+
+.popup{
+    background:#ffffff;
+    border-radius:32px;
+    box-shadow:
+        0 6px 20px rgba(0,0,0,.10),
+        0 16px 48px rgba(0,0,0,.16);
+    animation:popupShow .22s ease;
+}
+
+/* ==========================================================
+   POPUP ANIMATION
+========================================================== */
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-12px) scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   POPUP HEADINGS
+========================================================== */
+
+.popup h2{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin:0 0 24px;
+
+}
+
+.popup h3{
+
+    margin:0;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+.popup p{
+
+    margin:4px 0 0;
+
+    font-size:14px;
+
+    color:#717171;
+
+}
+
+/* ==========================================================
+   BUTTON RESET
+========================================================== */
+
+.popup button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    transition:
+
+        background .2s,
+
+        color .2s,
+
+        border-color .2s,
+
+        transform .15s;
+
+}
+
+.popup button:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================================================
+   COMMON SELECTED STATE
+========================================================== */
+
+.selected{
+
+    background:#f7f7f7;
+
+    border-color:#222 !important;
+
+}
+
+/* ==========================================================
+   COMMON HOVER
+========================================================== */
+
+.popup button:hover{
+
+    background:#f7f7f7;
+
+}
+
+/* ==========================================================
+   COMMON SCROLLBAR
+========================================================== */
+
+.popup ::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+.popup ::-webkit-scrollbar-thumb{
+
+    background:#d5d5d5;
+
+    border-radius:999px;
+
+}
+
+.popup ::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* ==========================================================
+   CALENDAR POPUP
+========================================================== */
+
+.popup{
+    overflow:hidden;
+    max-height:calc(100vh - 60px);
+    overscroll-behavior:auto;
+}
+
+.calendar-popup{
+    width:850px;
+    padding:32px;
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
+    overscroll-behavior:auto;
+}
+
+.calendar-top,
+.single-month-calendar {
+    overscroll-behavior:auto;
+}
+
+.calendar-container {
+    max-height:none;
+    overflow:visible;
+}
+
+.calendar-container::-webkit-scrollbar,
+.month-scroll::-webkit-scrollbar {
+    width:10px;
+}
+
+.calendar-container::-webkit-scrollbar-thumb,
+.month-scroll::-webkit-scrollbar-thumb {
+    background:#d5d5d5;
+    border-radius:999px;
+}
+
+.calendar-popup::-webkit-scrollbar{
+    width:10px;
+}
+
+.calendar-popup::-webkit-scrollbar-thumb{
+    background:#d5d5d5;
+    border-radius:999px;
+}
+
+.calendar-popup::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+.calendar-tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+.calendar-tabs button{
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#717171;
+
+}
+
+.calendar-tabs .tab-active{
+
+    background:#222;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   CALENDAR TOP
+========================================================== */
+
+.calendar-top{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.calendar-container{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+}
+
+/* ==========================================================
+   MONTH BOX
+========================================================== */
+
+.month-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.month-title{
+
+    text-align:center;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   WEEKDAYS
+========================================================== */
+
+.weekdays{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    margin-bottom:10px;
+
+}
+
+.weekdays span{
+
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#717171;
+
+}
+
+/* ==========================================================
+   DAYS GRID
+========================================================== */
+
+.calendar-days{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:6px;
+
+}
+
+.calendar-empty{
+
+    aspect-ratio:1;
+
+}
+
+/* ==========================================================
+   DAY BUTTON
+========================================================== */
+
+.calendar-days button{
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.18s;
+
+}
+
+.calendar-days button:hover:not(:disabled){
+
+    border:1px solid #222;
+
+    background:#fff;
+
+}
+
+/* ==========================================================
+   DISABLED
+========================================================== */
+
+.calendar-days button:disabled,
+
+.calendar-days .disabled{
+
+    color:#d0d0d0;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================================
+   RANGE COLORS
+========================================================== */
+
+.calendar-days .inside-range{
+
+    background:#f2f2f2;
+
+    border-radius:0;
+
+}
+
+.calendar-days .checkin,
+
+.calendar-days .checkout{
+
+    background:#222;
+
+    color:#fff;
+
+    border-radius:50%;
+
+}
+
+/* ==========================================================
+   MONTH ARROWS
+========================================================== */
+
+.month-arrow{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+.month-arrow:hover:not(:disabled){
+
+    background:#f3f3f3;
+
+}
+
+.month-arrow:disabled{
+
+    opacity:.35;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================================
+   LOCATION POPUP
+========================================================== */
+
+.location-popup{
+    width:420px;
+    padding:26px;
+}
+
+.location-popup h2{
+    margin:0 0 18px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.location-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.location-card{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    padding:14px;
+
+    border:none;
+    border-radius:16px;
+
+    background:#ffffff;
+
+    cursor:pointer;
+
+    transition:
+        background .18s,
+        transform .18s;
+}
+
+.location-card:hover{
+    background:#f7f7f7;
+}
+
+.location-card.selected{
+    background:#f1f1f1;
+}
+
+.location-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+    border-radius:14px;
+
+    background:#f5f5f5;
+}
+
+.location-card h3{
+    margin:0;
+    font-size:16px;
+    font-weight:600;
+}
+
+.location-card p{
+    margin-top:4px;
+    color:#717171;
+    font-size:14px;
+}
+
+/* ==========================================================
+   GUEST POPUP
+========================================================== */
+
+.guest-popup{
+    width:420px;
+    padding:18px 26px;
+}
+
+.guest-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #ebebeb;
+}
+
+.guest-row:last-child{
+    border-bottom:none;
+}
+
+.guest-row h3{
+    margin:0;
+    font-size:16px;
+    font-weight:600;
+}
+
+.guest-row p{
+    margin-top:4px;
+    color:#717171;
+    font-size:14px;
+}
+
+/* ==========================================================
+   COUNTER
+========================================================== */
+
+.counter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.counter button{
+
+    width:34px;
+
+    height:34px;
+
+    border:1px solid #cfcfcf;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#ffffff;
+
+    color:#222;
+
+    transition:
+        background .18s,
+        border-color .18s,
+        transform .15s;
+
+}
+
+.counter button:hover:not(:disabled){
+
+    border-color:#222;
+
+    background:#f7f7f7;
+
+}
+
+.counter button:disabled{
+
+    opacity:.35;
+
+    cursor:not-allowed;
+
+}
+
+.counter span{
+
+    min-width:18px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+/* ==========================================================
+   SERVICE POPUP
+========================================================== */
+
+.service-popup{
+
+    width:520px;
+
+    padding:28px;
+
+}
+
+.service-popup h2{
+
+    margin:0 0 20px;
+
+}
+
+/* ==========================================================
+   SERVICE GRID
+========================================================== */
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+/* ==========================================================
+   SERVICE CHIP
+========================================================== */
+
+.service-chip{
+
+    min-height:54px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid #dddddd;
+
+    border-radius:16px;
+
+    background:#ffffff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:#222;
+
+    transition:
+        border-color .18s,
+        background .18s,
+        transform .15s;
+
+}
+
+.service-chip:hover{
+
+    border-color:#222;
+
+    background:#f7f7f7;
+
+}
+
+.service-chip.selected{
+
+    border:2px solid #222;
+
+    background:#f5f5f5;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   SERVICE SEARCH BUTTON
+========================================================== */
+
+.service-search{
+
+    margin-top:28px;
+
+    width:100%;
+
+    height:52px;
+
+    border-radius:999px;
+
+    background:#ff385c !important;
+
+    color:#ffffff !important;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:
+        background .2s,
+        transform .15s;
+
+}
+
+.service-search:hover{
+
+    background:#e61e4d !important;
+
+}
+
+.service-search:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================================
+   GUEST POPUP
+========================================================== */
+
+.guest-popup{
+    width:380px;
+    padding:14px 0;
+}
+
+.guest-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    border-bottom:1px solid #efefef;
+}
+
+.guest-row:last-child{
+    border-bottom:none;
+}
+
+.guest-row h3{
+    margin:0;
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+}
+
+.guest-row p{
+    margin-top:4px;
+    font-size:14px;
+    color:#717171;
+}
+
+.counter{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.counter span{
+    width:18px;
+    text-align:center;
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+}
+
+.counter button{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:1px solid #c7c7c7;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.counter button:hover:not(:disabled){
+    border-color:#222;
+}
+
+.counter button:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+/* ==========================================================
+   SERVICE POPUP
+========================================================== */
+
+.service-popup{
+    width:460px;
+    padding:28px;
+}
+
+.service-popup h2{
+    margin:0 0 22px;
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+}
+
+.service-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+/* ==========================================================
+   FLEXIBLE MONTH CARDS
+========================================================== */
+
+.month-scroll {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 8px 0 6px;
+    scroll-behavior: smooth;
+    margin-top: 20px;
+}
+
+.month-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.month-scroll::-webkit-scrollbar-thumb {
+    background: #d5d5d5;
+    border-radius: 999px;
+}
+
+.month-card {
+    flex: 0 0 170px;
+    min-height: 190px;
+    border: 1px solid #e9e9e9;
+    border-radius: 22px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: .22s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 16px;
+    text-align: center;
+}
+
+.month-card:hover {
+    border-color: #000;
+    transform: translateY(-2px);
+}
+
+.month-card.selected {
+    background: #f7f7f7;
+    border: 2px solid #000;
+}
+
+.calendar-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: #f5f5f5;
+    color: #444;
+}
+
+.month-card h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.month-card p {
+    margin: 0;
+    color: #717171;
+    font-size: 14px;
+}
+
+.date-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.date-options button {
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid #dddddd;
+    background: #fff;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.date-options button:hover,
+.date-options button.selected {
+    border-color: #222;
+    background: #f7f7f7;
+}
+
+.flexible-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 0 0;
+}
+
+.flexible-panel h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+.stay-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.stay-buttons button {
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: 1px solid #dddddd;
+    background: #fff;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .18s;
+}
+
+.stay-buttons button:hover,
+.stay-buttons button.selected {
+    border-color: #222;
+    background: #f7f7f7;
+}
+
+.single-month-popup .date-options {
+    margin: 34px -36px 0;
+    padding: 24px 26px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid #ebebeb;
+}
+
+/* ==========================================================
+   LOCATION POPUP
+========================================================== */
+
+.location-popup {
+    width: 430px;
+}
+
+.location-popup h2 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.location-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.location-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: .18s;
+    text-align: left;
+}
+
+.location-card:hover {
+    background: #f7f7f7;
+}
+
+.location-card.selected {
+    background: #efefef;
+}
+
+.location-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.location-card h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.location-card p {
+    margin-top: 4px;
+    color: #717171;
+    font-size: 14px;
+}
+
+/* ==========================================================
+   SERVICE POPUP
+========================================================== */
+
+.service-popup{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.service-popup h2{
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.service-chip{
+    border:1px solid #dddddd;
+    background:#ffffff;
+    border-radius:18px;
+    min-height:60px;
+    padding:18px;
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.service-chip:hover{
+    border-color:#000;
+    transform:translateY(-2px);
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+
+.service-chip.selected{
+    background:#222;
+    color:#fff;
+    border-color:#222;
+}
+
+.service-search{
+    margin-top:10px;
+    height:52px;
+    background:#ff385c;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    border-radius:999px;
+
+    font-weight:700;
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.service-search:hover{
+    background:#e61e4d;
+}
+
+/* ==========================================================
+   SERVICE POPUP
+========================================================== */
+
+.service-popup{
+    width:420px;
+    padding:28px;
+}
+
+.service-popup h2{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.service-chip{
+    height:52px;
+    border-radius:30px;
+    border:1px solid #dddddd;
+    background:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.service-chip:hover{
+    border-color:#222;
+}
+
+.service-chip.selected{
+    background:#222;
+    color:white;
+    border-color:#222;
+}
+
+.service-search{
+    margin-top:28px;
+    height:48px;
+    border-radius:24px;
+    background:#ff385c;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ==========================================================
+   POPUP ANIMATION
+========================================================== */
+
+.popup{
+    animation:popupFade .22s ease;
+    transform-origin:top center;
+}
+
+@keyframes popupFade{
+
+    from{
+        opacity:0;
+        transform:translateY(-14px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.month-scroll::-webkit-scrollbar{
+    height:8px;
+}
+
+.month-scroll::-webkit-scrollbar-thumb{
+    background:#d6d6d6;
+    border-radius:999px;
+}
+
+.location-list::-webkit-scrollbar{
+    width:8px;
+}
+
+.location-list::-webkit-scrollbar-thumb{
+    background:#d6d6d6;
+    border-radius:999px;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1200px){
+
+    .calendar-popup{
+        width:96vw;
+    }
+
+    .calendar-container{
+        flex-direction:column;
+        gap:30px;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .popup{
+        width:95vw;
+    }
+
+    .calendar-popup{
+        padding:22px;
+    }
+
+    .guest-popup{
+        width:95vw;
+    }
+
+    .location-popup{
+        width:95vw;
+    }
+
+    .service-popup{
+        width:95vw;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .calendar-tabs{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .date-options{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .stay-buttons{
+        flex-wrap:wrap;
+    }
+
+    .month-scroll{
+        gap:14px;
+    }
+
+    .guest-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+    .counter{
+        align-self:flex-end;
+    }
+
+}
+
+/* ==========================================================
+   EXPERIENCE AND SERVICE DATE PICKER
+========================================================== */
+
+.single-month-popup{
+    width:860px;
+    padding:34px 36px 0;
+}
+
+.single-month-popup .calendar-tabs{
+    width:470px;
+    margin:0 auto 34px;
+    padding:6px;
+    gap:0;
+    border-radius:999px;
+    background:#ebebeb;
+}
+
+.single-month-popup .calendar-tabs button{
+    flex:1;
+    padding:12px 20px;
+    border-radius:999px;
+    color:#222;
+    font-size:18px;
+    font-weight:500;
+}
+
+.single-month-popup .calendar-tabs .tab-active{
+    background:#fff;
+    color:#222;
+    box-shadow:0 1px 3px rgba(0,0,0,.16);
+}
+
+.single-month-calendar{
+    align-items:center;
+    gap:24px;
+}
+
+.single-month-calendar .quick-date-options{
+    width:272px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    flex-shrink:0;
+}
+
+.quick-date-options button{
+    min-height:132px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:8px;
+    border:1px solid #dddddd !important;
+    border-radius:18px;
+    background:#fff !important;
+    text-align:left;
+}
+
+.quick-date-options button:hover,
+.quick-date-options button.selected{
+    border-color:#222 !important;
+    background:#f7f7f7 !important;
+}
+
+.quick-date-options strong{
+    font-size:24px;
+    font-weight:600;
+    color:#222;
+}
+
+.quick-date-options span{
+    font-size:18px;
+    color:#717171;
+}
+
+.single-month-calendar .calendar-container{
+    min-width:390px;
+    grid-template-columns:1fr;
+    gap:0;
+}
+
+.single-month-calendar .month-title{
+    font-size:24px;
+    margin-bottom:24px;
+}
+
+.single-month-calendar .weekdays span{
+    font-size:16px;
+    color:#717171;
+}
+
+.single-month-calendar .calendar-days{
+    gap:10px;
+}
+
+.single-month-calendar .calendar-days button{
+    font-size:18px;
+    font-weight:500;
+}
+
+.single-month-popup .date-options{
+    margin:34px -36px 0;
+    padding:24px 26px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    border-top:1px solid #ebebeb;
+}
+
+.single-month-popup .date-options button{
+    padding:12px 22px;
+    border:1px solid #dddddd !important;
+    border-radius:999px;
+    background:#fff !important;
+    color:#222;
+    font-size:16px;
+    font-weight:500;
+}
+
+.single-month-popup .date-options button.selected{
+    border:2px solid #222 !important;
+    padding:11px 21px;
+}
+
+.single-month-popup .flexible-panel{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:28px 8px 36px;
+}
+
+.single-month-popup .flexible-panel h2{
+    margin:10px 0 22px;
+    font-size:28px;
+    font-weight:600;
+}
+
+.single-month-popup .stay-buttons{
+    display:flex;
+    gap:12px;
+    margin-bottom:64px;
+}
+
+.single-month-popup .stay-buttons button{
+    padding:14px 26px;
+    border:1px solid #dddddd !important;
+    border-radius:999px;
+    background:#fff !important;
+    font-size:18px;
+    color:#222;
+}
+
+.single-month-popup .stay-buttons button.selected{
+    border:3px solid #222 !important;
+    padding:12px 24px;
+}
+
+.single-month-popup .month-scroll{
+    width:100%;
+    gap:12px;
+    padding:4px 0 12px;
+}
+
+.single-month-popup .month-card{
+    flex-basis:148px;
+    min-height:190px;
+    border-radius:22px;
+}
+
+@media (max-width:900px){
+    .single-month-popup{
+        width:min(95vw, 860px);
+    }
+
+    .single-month-calendar{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+@media (max-width:650px){
+    .single-month-popup{
+        padding:24px 16px 0;
+    }
+
+    .single-month-popup .calendar-tabs{
+        width:100%;
+    }
+
+    .single-month-calendar .quick-date-options,
+    .single-month-calendar .calendar-container{
+        width:100%;
+        min-width:0;
+    }
+
+    .single-month-calendar .month-arrow{
+        display:none;
+    }
+
+    .single-month-popup .date-options{
+        margin-inline:-16px;
+    }
+}

@@ -1,0 +1,343 @@
+/* ==========================================================
+   ECO SCORE CARD
+========================================================== */
+
+.eco-score{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:1px solid #ebebeb;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease,
+        background-color .22s ease;
+
+}
+
+.eco-score:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.10);
+
+}
+
+/* ==========================================================
+   SCORE COLORS
+========================================================== */
+
+.eco-score.excellent{
+
+    border-left:6px solid #2e7d32;
+
+}
+
+.eco-score.good{
+
+    border-left:6px solid #43a047;
+
+}
+
+.eco-score.moderate{
+
+    border-left:6px solid #fb8c00;
+
+}
+
+.eco-score.poor{
+
+    border-left:6px solid #e53935;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.eco-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.eco-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#2e7d32;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+.eco-value{
+
+    min-width:48px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    background:#edf8ef;
+
+    color:#2e7d32;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.eco-status{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+}
+
+.eco-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:#f5f5f5;
+
+    color:#222222;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.eco-carbon{
+
+    font-size:13px;
+
+    color:#717171;
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   FEATURES
+========================================================== */
+
+.eco-features{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+/* ==========================================================
+   FEATURE CHIP
+========================================================== */
+
+.eco-chip{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    background:#f6faf6;
+
+    color:#2e7d32;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:
+        background-color .2s ease,
+        transform .2s ease;
+
+}
+
+.eco-chip:hover{
+
+    background:#e9f7eb;
+
+    transform:translateY(-1px);
+
+}
+
+/* ==========================================================
+   ACTIVE
+========================================================== */
+
+.eco-score:active{
+
+    transform:scale(.985);
+
+}
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+.eco-score:focus-visible{
+
+    outline:2px solid #2e7d32;
+
+    outline-offset:3px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    .eco-score{
+
+        padding:12px;
+
+        gap:12px;
+
+    }
+
+    .eco-header{
+
+        align-items:flex-start;
+
+    }
+
+    .eco-status{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+    .eco-features{
+
+        gap:8px;
+
+    }
+
+    .eco-chip{
+
+        font-size:12px;
+
+        padding:7px 10px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .eco-title{
+
+        font-size:14px;
+
+    }
+
+    .eco-value{
+
+        min-width:42px;
+
+        height:32px;
+
+        font-size:14px;
+
+    }
+
+    .eco-carbon{
+
+        font-size:12px;
+
+    }
+
+    .eco-chip{
+
+        font-size:11px;
+
+    }
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .eco-score,
+    .eco-chip{
+
+        transition:none;
+
+    }
+
+}

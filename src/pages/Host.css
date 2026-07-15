@@ -1,0 +1,44 @@
+/* Layout wrapper to ensure the page scrolls smoothly */
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Fixes the primary Header component to the absolute top */
+.home-page-container > header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+/* Fixes the categories Navbar strip directly underneath the main Header */
+.home-page-container > nav,
+.home-page-container > .navbar-wrapper {
+  position: sticky;
+  top: 80px; /* Adjust this value if your Header height is different */
+  z-index: 90;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Center and constrain the listing rows to match the screenshot padding rules */
+.home-main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustment for tighter screens */
+@media (max-width: 744px) {
+  .home-main-content {
+    padding: 20px 24px;
+  }
+}
