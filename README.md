@@ -123,7 +123,7 @@ airbnb
 Clone the repository
 
 ```bash
-git clone https://github.com/Kunal20060208/airbnb.git
+git clone https://github.com/Kunalarya218/airbnb.git
 ```
 
 Move inside the project
